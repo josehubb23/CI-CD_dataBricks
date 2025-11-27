@@ -12,6 +12,7 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
+      
 
     - name: Install jq & curl
       run: sudo apt-get update && sudo apt-get install -y jq curl
@@ -20,7 +21,7 @@ jobs:
       run: |
         ORIGIN_HOST=${{ secrets.DATABRICKS_ORIGIN_HOST }}
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
-        NOTEBOOK_BASE="/Workspace/Users/josehubb23@gmail.com/Clase 12/source_ntbk"
+        NOTEBOOK_BASE="/Workspace/Users/josehubb23@gmail.com/Clase_12/source_ntbk"
         NOTEBOOKS=("Disparador" "mount_adls_storage_v1" "ntbk_1")  # Agrega más según necesitesas
 
         mkdir -p notebooks_to_deploy
